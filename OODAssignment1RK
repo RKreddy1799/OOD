@@ -3,6 +3,8 @@ public interface running
         string Name { get; }
         double Length { get; }
    }
+   
+   
 public class Marathon : running
     {
         private string m_Name = "Win the Marathon";
@@ -16,6 +18,7 @@ public class Marathon : running
             }
         }
 
+
         public double Length
         {
             get
@@ -24,11 +27,14 @@ public class Marathon : running
             }
         }
 
+
          public string FindLength()
         {
             return "Normal race lenghth is:" + m_Length + "and distance is: " + (this.m_Length * 0.08f);
         }
         }
+        
+        
 class Full_race
 {
     running _marathon1;
@@ -47,6 +53,9 @@ class Full_race
         return _marathon1.Length + 100;
     }
     }
+    
+    
+    
 class Half_race
     {
         running _marathon1;
@@ -63,6 +72,9 @@ class Half_race
         return _marathon1.Length + 50;
       }
  }
+ 
+ 
+ 
  public class Client
 {
 static void Main(string[] args)
@@ -83,7 +95,10 @@ static void Main(string[] args)
 }
 }
 
-output:
+
+
+
+Output:
 
 Normal race lenghth is:200 and distance is:  15.9999996423721
 
