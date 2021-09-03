@@ -1,0 +1,92 @@
+public interface running
+    {
+        string Name { get; }
+        double Length { get; }
+   }
+public class Marathon : running
+    {
+        private string m_Name = "Win the Marathon";
+        private double m_Length = 200.00;
+
+        public string Name
+        {
+            get 
+            {
+               return m_Name;
+            }
+        }
+
+        public double Length
+        {
+            get
+            {
+                return m_Length;
+            }
+        }
+
+         public string FindLength()
+        {
+            return "Normal race lenghth is:" + m_Length + "and distance is: " + (this.m_Length * 0.08f);
+        }
+        }
+class Full_race
+{
+    running _marathon1;
+
+    public Full_race(running iracedistance)            
+    {
+        _marathon1 = iracedistance;
+    }
+
+    public string GetName()
+    {
+        return "Full_race!";
+    }
+    public double GetLength()
+    {
+        return _marathon1.Length + 100;
+    }
+    }
+class Half_race
+    {
+        running _marathon1;
+        public Half_race(running iracedistance)            
+        {
+            _marathon1 = iracedistance;
+        }
+         public string GetName()
+        {
+          return "Half_race!";
+          }
+        public double GetLength()
+        {
+        return _marathon1.Length + 50;
+      }
+ }
+ public class Client
+{
+static void Main(string[] args)
+{
+
+    Marathon marathon = new Marathon();
+    Console.WriteLine(marathon.FindLength());
+    Console.ReadKey();
+    Console.WriteLine(Environment.NewLine);
+    Fullrace fr = new Full_race(marathon);
+    Console.WriteLine(fr.GetName() + "  " + fr.GetLength());
+    Console.ReadKey();
+
+    Console.WriteLine(Environment.NewLine);
+    Half_race hr = new Half_race(marathon);
+    Console.WriteLine(hr.GetName() + "  " + hr.GetLength());
+    Console.ReadKey();
+}
+}
+
+output:
+
+Normal race lenghth is:200 and distance is:  15.9999996423721
+
+Full_race!   300
+
+Half_race!   250
